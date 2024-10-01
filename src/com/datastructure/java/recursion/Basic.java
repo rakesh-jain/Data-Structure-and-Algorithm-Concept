@@ -3,7 +3,8 @@ package com.datastructure.java.recursion;
 
 public class Basic {
     public static void main(String[] args) {
-        pattern(5);
+        base(8);
+        //pattern(5);
     }
    public static void pattern(int n){
         for(int row=0;row<n*2;row++) {
@@ -21,6 +22,12 @@ public class Basic {
             }
             System.out.println();
         }
-
+   }
+   public static void base(int n){
+        if(n==0){
+            return;
+        }
+        base(n-1);
+       System.out.println(n);
    }
 }

@@ -21,8 +21,42 @@ public class RecursionExamples {
         //System.out.println(sum);
        // System.out.println(reverse1(1234));
        // System.out.println(countzeros(30321));
-        System.out.println(selfDividingNumbers(1,22));
+       // System.out.println(selfDividingNumbers(1,22));
+        int[] arr=new int[]{1,2,3,4,5,6};
+      // printArray(arr);
+        //reverseArray(arr,0, arr.length-1);
+        reverserc(arr);
+        printArray(arr);
+    }
+    public static int[] reverserc(int arr[]){
+        int i=0;
+        return helperr(arr, 0);
+    }
 
+    private static int[] helperr(int arr[],int start){
+        if(start>=arr.length/2){
+            return arr;
+        }
+        swap(arr,start,arr.length-start-1);
+        return helperr(arr,start+1);
+    }
+
+    public static void reverseArray(int arr[], int start, int end){
+        if(start==end){
+            return;
+        }
+        swap(arr,start,end);
+        reverseArray(arr, start+1,end-1);
+    }
+    public static void swap(int arr[],int start,int end){
+        int temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+    }
+    public static void printArray(int arr[]){
+        for(int s:arr){
+            System.out.println(s);
+        }
     }
     public static void print(int n){
         if(n>=5){
