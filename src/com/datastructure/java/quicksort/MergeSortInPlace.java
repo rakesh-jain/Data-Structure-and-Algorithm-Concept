@@ -5,7 +5,7 @@ public class MergeSortInPlace {
         int [] arr=new int[]{8,3,4,12,5,6};
         mergesort(arr,0,arr.length);
         for(int i:arr){
-            System.out.println(i);
+            System.out.print(i+",");
         }
     }
     public static void mergesort(int arr[], int  start, int end){

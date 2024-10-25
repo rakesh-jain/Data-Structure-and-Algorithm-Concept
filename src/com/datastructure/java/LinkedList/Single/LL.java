@@ -5,6 +5,21 @@ public class LL {
     private Node tail;
     public int size;
 
+    public int getHead() {
+        return head.val;
+    }
+    public int getHeadNext() {
+        return head.next.val;
+    }
+
+    public int getTail() {
+        return tail.val;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     public LL() {
         this.size = 0;
     }
@@ -60,6 +75,7 @@ public class LL {
         }
         return node;
     }
+
     public int deleteLast(){
         if(size<=1){
             return deleteFirst();
@@ -71,12 +87,12 @@ public class LL {
     }
     public void display(){
         Node node=head;
-        System.out.print("null->");
+        System.out.print("{");
         while(node!=null){
             System.out.print(node.val+"->");
             node=node.next;
         }
-        System.out.print("null");
+        System.out.print("}");
     }
 
     private class Node{
@@ -91,4 +107,7 @@ public class LL {
             this.next = next;
         }
     }
+//    public LL mergeTwoLists(Node list1, Node list2) {
+//
+//    }
 }
