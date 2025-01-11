@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int arr[]=new int[]{7,10,4,3,20,15};
-       // sort(arr,0,arr.length-1);
+        sort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
         System.out.println(Math.random());
 

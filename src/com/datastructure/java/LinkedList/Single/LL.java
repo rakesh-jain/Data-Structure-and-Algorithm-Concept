@@ -1,5 +1,8 @@
 package com.datastructure.java.LinkedList.Single;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 public class LL {
     private Node head;
     private Node tail;
@@ -93,6 +96,48 @@ public class LL {
             node=node.next;
         }
         System.out.print("}");
+    }
+
+    public  Node reverse(){
+        Node prev=null;
+        Node next;
+        Node curr=head;
+        while(curr!=null){
+           next=curr.next;
+           curr.next=prev;
+           prev=curr;
+           curr=next;
+        }
+        Node temp=prev;
+        while(temp!=null){
+            System.out.print(temp.val+"->");
+            temp=temp.next;
+        }
+        return prev;
+    }
+    public void reverseStack(){
+        Stack<Node>stack=new Stack<>();
+        Node node=head;
+        while(node!=null){
+            stack.push(node);
+            node=node.next;
+        }
+        head=stack.pop();
+        node=head;
+        while(!stack.isEmpty()){
+            node.next=stack.pop();
+            node=node.next;
+        }
+        node.next=null;
+    }
+    public void fastSize(){
+        Node fast=head;
+        int i=0;
+        while(fast!=null){
+            fast=fast.next;
+            i=i+1;
+        }
+        System.out.println(i-2);
     }
 
     private class Node{
